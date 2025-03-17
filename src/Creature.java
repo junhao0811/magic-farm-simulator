@@ -3,13 +3,13 @@ public class Creature {
     protected String name;
     protected int hungerLevel;
 
-    public Creature (int age, String name, int hungerLevel) {
-        this.age = age;
+    public Creature(String name, int age, int hungerLevel) {
         this.name = name;
+        this.age = age;
         this.hungerLevel = hungerLevel;
     }
 
     public String toString() {
-        return String.format("Age: %d, Name: %s, Hunger level: %d", age, name, hungerLevel);
+        return String.format("Name: %s, Age: %d days, Hunger Level: %d", name, age, hungerLevel);
     }
 }

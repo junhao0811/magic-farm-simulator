@@ -1,10 +1,10 @@
 public class MagicShark extends Creature {
-    public MagicShark(int age, String name, int hungerLevel) {
-        super(age, name, hungerLevel);
+    public MagicShark(String name, int age, int hungerLevel) {
+        super(name, age, hungerLevel);
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "MagicShark " + super.toString();
     }
 }

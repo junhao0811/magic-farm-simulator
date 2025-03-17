@@ -1,13 +1,13 @@
 public class MagicCow extends Creature {
     private int milkAmount;
 
-    public MagicCow(int age, String name, int hungerLevel, int milkAmount) {
-        super(age, name, hungerLevel);
+    public MagicCow(String name, int age, int hungerLevel, int milkAmount) {
+        super(name, age, hungerLevel);
         this.milkAmount = milkAmount;
     }
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", Milk Quantity: %d", milkAmount);
+        return "MagicCow " + super.toString() + String.format(", Milk Quantity: %d", milkAmount);
     }
 }

@@ -1,13 +1,13 @@
 public class MagicDuck extends Creature {
     private int eggQuantity;
 
-    public MagicDuck(int age, String name, int hungerLevel, int eggQuantity) {
-        super(age, name, hungerLevel);
+    public MagicDuck(String name, int age, int hungerLevel, int eggQuantity) {
+        super(name, age, hungerLevel);
         this.eggQuantity = eggQuantity;
     }
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", Egg Quantity: %d", eggQuantity);
+        return "MagicDuck " + super.toString() + String.format(", Egg Quantity: %d", eggQuantity);
     }
 }
