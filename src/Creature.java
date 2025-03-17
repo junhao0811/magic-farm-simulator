@@ -1,7 +1,7 @@
 public class Creature {
-    private int age;
-    private String name;
-    private int hungerLevel;
+    protected int age;
+    protected String name;
+    protected int hungerLevel;
 
     public Creature (int age, String name, int hungerLevel) {
         this.age = age;
