@@ -14,12 +14,12 @@ public class MagicFarm {
 
     // Creates six new Creature objects
     public void createCreatures() {
-        creatures[0] = new MagicDuck("Donald", 1, 10, 3);
-        creatures[1] = new MagicDuck("Quackers", 2, 10, 3);
-        creatures[2] = new MagicCow("Moozy", 3, 10, 10);
-        creatures[3] = new MagicCow("Sparkle", 4, 10, 10);
+        creatures[0] = new MagicDuck("Donald", 10, 10, 3);
+        creatures[1] = new MagicDuck("Quackers", 200, 10, 3);
+        creatures[2] = new MagicCow("Moozy", 39, 10, 10);
+        creatures[3] = new MagicCow("Sparkle", 432, 10, 10);
         creatures[4] = new MagicShark("Finn", 5, 10);
-        creatures[5] = new MagicShark("Storm", 6, 10);
+        creatures[5] = new MagicShark("Storm", 60, 10);
     }
 
     // Shows each creature's attributes
