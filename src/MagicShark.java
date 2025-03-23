@@ -4,6 +4,11 @@ public class MagicShark extends Creature {
     }
 
     @Override
+    public void feed() {
+        this.consumeFood(2);
+    }
+
+    @Override
     public String toString() {
         return "MagicShark " + super.toString();
     }

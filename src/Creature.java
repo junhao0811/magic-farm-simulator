@@ -1,4 +1,7 @@
-public class Creature {
+import java.util.List;
+import java.util.ArrayList;
+
+public abstract class Creature {
     private int age;
     private String name;
     private int hungerLevel;
@@ -21,6 +24,8 @@ public class Creature {
         // Prevents the hungerLevel to go negative
         hungerLevel = Math.max(0, hungerLevel - amount);
     }
+
+    public abstract void feed();
 
     public String formatAge(int totalDays) {
         final int DAYS_IN_YEAR = 365;
@@ -47,6 +52,12 @@ public class Creature {
 
         // Remove any trailing whitespaces
         return res.toString().trim();
+    }
+
+    public List<Action> allowableActions() {
+        List<Action> actions = new ArrayList<>();
+        actions.add(new FeedAction(this));
+        return actions;
     }
 
     public String toString() {
