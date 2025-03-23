@@ -7,6 +7,11 @@ public class MagicDuck extends Creature {
     }
 
     @Override
+    public void feed() {
+        this.consumeFood(3);
+    }
+
+    @Override
     public String toString() {
         return "MagicDuck " + super.toString() + String.format(", Egg Quantity: %d", eggQuantity);
     }
