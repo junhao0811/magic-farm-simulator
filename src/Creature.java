@@ -60,6 +60,7 @@ public abstract class Creature {
         return actions;
     }
 
+    @Override
     public String toString() {
         return String.format("Name: %s, Age: %s, Hunger Level: %d", name, formatAge(age), hungerStatus());
     }

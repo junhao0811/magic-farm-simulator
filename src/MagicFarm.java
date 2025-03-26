@@ -9,7 +9,7 @@ public class MagicFarm {
     }
 
     public void printStatus() {
-        System.out.println("Welcome to FIT2099 Magic Farm\n");
+        System.out.println("Welcome to FIT2099 Magic Farm");
         createCreatures();
         addActionsToMenu();
         System.out.println("Thank you for visiting FIT2099 Magic Farm!");
