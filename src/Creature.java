@@ -26,6 +26,18 @@ public abstract class Creature implements ActionCapable {
         hungerLevel = Math.max(0, hungerLevel - amount);
     }
 
+    public Status currentCondition() {
+        return this.status;
+    }
+
+    public void updateStatus(Status status) {
+        this.status = status;
+    }
+
+    public void recover() {
+        this.status = null;
+    }
+
     public abstract void feed();
 
     public String formatAge(int totalDays) {
