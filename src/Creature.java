@@ -5,6 +5,7 @@ public abstract class Creature implements ActionCapable {
     private int age;
     private String name;
     private int hungerLevel;
+    private Status status;
 
     public Creature(String name, int age, int hungerLevel) {
         this.name = name;
