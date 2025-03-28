@@ -73,6 +73,24 @@ public abstract class Creature implements ActionCapable {
         return actions;
     }
 
+    public void incrementHungerLevel() {
+        if (currentCondition() == Status.SICK) {
+            hungerLevel += 2;
+        } else if (currentCondition() == null) {
+            hungerLevel += 1;
+        }
+    }
+
+    public void incrementAge() {
+        // If the hungerLevel is over 100, then the creature will have DEATH status (can't be reverted)
+        if (hungerStatus() > 100) {
+            status = Status.DEATH;
+        // Else keep increasing the age
+        } else {
+            age++;
+        }
+    }
+
     @Override
     public String toString() {
         return String.format("Name: %s, Age: %s, Hunger Level: %d", name, formatAge(age), hungerStatus());
