@@ -1,4 +1,4 @@
-public abstract class Action {
-    public abstract String execute();
-    public abstract String menuDescription();
+public interface Action {
+    String execute(Farmer farmer);
+    String menuDescription();
 }
