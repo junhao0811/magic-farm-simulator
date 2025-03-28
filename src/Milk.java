@@ -1,9 +1,9 @@
 public class Milk extends Item {
     private int freshnessLevel;
 
-    public Milk() {
-        super();
-        this.freshnessLevel = 0;
+    public Milk(int quantity, int freshnessLevel) {
+        super(quantity);
+        this.freshnessLevel = freshnessLevel;
     }
 
     @Override

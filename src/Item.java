@@ -1,8 +1,8 @@
 public abstract class Item {
     private int quantity;
 
-    public Item() {
-        this.quantity = 0;
+    public Item(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override
