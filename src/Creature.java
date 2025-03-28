@@ -93,6 +93,7 @@ public abstract class Creature implements ActionCapable {
 
     @Override
     public String toString() {
-        return String.format("Name: %s, Age: %s, Hunger Level: %d", name, formatAge(age), hungerStatus());
+        return String.format("%sName: %s, Age: %s, Hunger Level: %d", status == Status.SICK ? "[SICK] " : "",
+                name, formatAge(age), hungerStatus());
     }
 }
