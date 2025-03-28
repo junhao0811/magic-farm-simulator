@@ -15,12 +15,16 @@ public class MagicDuck extends Creature implements Collectible {
 
     @Override
     public Item produce() {
-        // TODO
+        if (canProduce()) {
+            return checkStatus(Status.SICK) ? new Egg(eggQuantity, true)
+                                            : new Egg(eggQuantity, false);
+        }
+        return null;
     }
 
     @Override
     public boolean canProduce() {
-        // TODO
+        return hungerStatus() < 3;
     }
 
     @Override

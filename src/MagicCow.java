@@ -15,12 +15,16 @@ public class MagicCow extends Creature implements Collectible {
 
     @Override
     public Item produce() {
-        // TODO
+        if (canProduce()) {
+            return checkStatus(Status.SICK) ? new Milk(milkAmount, 60)
+                                            : new Milk(milkAmount, 100);
+        }
+        return null;
     }
 
     @Override
     public boolean canProduce() {
-        // TODO
+        return hungerStatus() < 10;
     }
 
     @Override
