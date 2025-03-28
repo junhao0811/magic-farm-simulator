@@ -38,6 +38,11 @@ public abstract class Creature implements ActionCapable {
         this.status = null;
     }
 
+    // Indicates whether the creature has the corresponding status or not
+    public boolean checkStatus(Status status) {
+        return this.status == status;
+    }
+
     public abstract void feed();
 
     public String formatAge(int totalDays) {
