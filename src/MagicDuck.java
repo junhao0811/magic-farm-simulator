@@ -1,4 +1,6 @@
-public class MagicDuck extends Creature {
+import java.util.List;
+
+public class MagicDuck extends Creature implements Collectible {
     private int eggQuantity;
 
     public MagicDuck(String name, int age, int hungerLevel, int eggQuantity) {
@@ -9,6 +11,23 @@ public class MagicDuck extends Creature {
     @Override
     public void feed() {
         this.consumeFood(3);
+    }
+
+    @Override
+    public Item produce() {
+        // TODO
+    }
+
+    @Override
+    public boolean canProduce() {
+        // TODO
+    }
+
+    @Override
+    public List<Action> allowableActions() {
+        List<Action> actions = super.allowableActions();
+        actions.add(new CollectAction(this));
+        return actions;
     }
 
     @Override
