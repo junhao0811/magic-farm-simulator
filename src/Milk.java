@@ -8,6 +8,6 @@ public class Milk extends Item {
 
     @Override
     public String toString() {
-        return String.format("Milk: %s with freshness level: %s\n", super.toString(),freshnessLevel);
+        return String.format("Milk: %s with freshness level: %s\n", super.toString(), freshnessLevel);
     }
 }

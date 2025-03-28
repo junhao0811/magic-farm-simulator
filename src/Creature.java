@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public abstract class Creature {
+public abstract class Creature implements ActionCapable {
     private int age;
     private String name;
     private int hungerLevel;

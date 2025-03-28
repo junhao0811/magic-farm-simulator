@@ -18,7 +18,7 @@ public class Farmer {
         for (int i = 0; i < inventory.size(); i++) {
             System.out.printf("( %d ) %s\n", i+1, inventory.get(i).toString());
         }
-        System.out.println("-----------------END-----------------------------");
+        System.out.println("-----------------------END-----------------------");
     }
 
     @Override

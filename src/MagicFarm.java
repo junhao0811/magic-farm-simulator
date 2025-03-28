@@ -3,16 +3,11 @@ import java.util.ArrayList;
 
 public class MagicFarm {
     private List<Creature> creatures;
+    private Farmer farmer;
 
     public MagicFarm() {
         creatures = new ArrayList<>();
-    }
-
-    public void printStatus() {
-        System.out.println("Welcome to FIT2099 Magic Farm");
-        createCreatures();
-        addActionsToMenu();
-        System.out.println("Thank you for visiting FIT2099 Magic Farm!");
+        farmer = new Farmer();
     }
 
     // Creates six new Creature objects
@@ -35,14 +30,25 @@ public class MagicFarm {
     public void addActionsToMenu() {
         List<Action> actions = new ArrayList<>();
 
-        // Store all actions
-        for (Creature creature : creatures) {
-            actions.addAll(creature.allowableActions());
+        List<ActionCapable> actionCapables = new ArrayList<>(creatures);
+
+        for (ActionCapable actionCapable: actionCapables) {
+            actions.addAll(actionCapable.allowableActions());
         }
 
         System.out.println("############################################");
 
         Action action = Menu.showMenu(actions);
-        System.out.println(action.execute());
+        System.out.println(action.execute(farmer));
+        farmer.listInventoryItems();
+    }
+
+    public void printStatus() {
+        System.out.println("Welcome to FIT2099 Magic Farm");
+        createCreatures();
+        while (!creatures.isEmpty()) {
+            addActionsToMenu();
+        }
+        System.out.println("Thank you for visiting FIT2099 Magic Farm!");
     }
 }

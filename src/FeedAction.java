@@ -1,4 +1,4 @@
-public class FeedAction extends Action{
+public class FeedAction implements Action {
     private Creature creature;
 
     public FeedAction(Creature creature) {
@@ -6,7 +6,7 @@ public class FeedAction extends Action{
     }
 
     @Override
-    public String execute() {
+    public String execute(Farmer farmer) {
         creature.feed();
         return creature + " has been fed";
     }
