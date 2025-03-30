@@ -1,3 +1,10 @@
+package farm;
+
+import actions.Action;
+import capabilities.ActionCapable;
+import creatures.*;
+import ui.Menu;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -11,7 +18,7 @@ public class MagicFarm {
         farmer = new Farmer();
     }
 
-    // Creates six new Creature objects
+    // Creates six new creatures.Creature objects
     public void createCreatures() {
         creatures.add(new MagicDuck("Donald", 10, 10, 3));
         creatures.add(new MagicDuck("Quackers", 200, 10, 3));

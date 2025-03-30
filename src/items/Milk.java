@@ -1,3 +1,5 @@
+package items;
+
 public class Milk extends Item {
     private int freshnessLevel;
 

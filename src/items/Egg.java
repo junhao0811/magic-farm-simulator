@@ -1,3 +1,5 @@
+package items;
+
 public class Egg extends Item {
     private boolean isBroken;
 

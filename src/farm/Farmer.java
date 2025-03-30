@@ -1,3 +1,7 @@
+package farm;
+
+import items.Item;
+
 import java.util.List;
 import java.util.ArrayList;
 

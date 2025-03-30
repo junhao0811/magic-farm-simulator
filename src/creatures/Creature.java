@@ -1,3 +1,7 @@
+package creatures;
+
+import actions.*;
+import capabilities.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -24,10 +28,6 @@ public abstract class Creature implements ActionCapable {
 
         // Prevents the hungerLevel to go negative
         hungerLevel = Math.max(0, hungerLevel - amount);
-    }
-
-    public Status currentCondition() {
-        return this.status;
     }
 
     public void updateStatus(Status status) {
@@ -79,9 +79,9 @@ public abstract class Creature implements ActionCapable {
     }
 
     public void incrementHungerLevel() {
-        if (currentCondition() == Status.SICK) {
+        if (checkStatus(Status.SICK)) {
             hungerLevel += 2;
-        } else if (currentCondition() == null) {
+        } else if (checkStatus(null)) {
             hungerLevel += 1;
         }
     }

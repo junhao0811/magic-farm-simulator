@@ -1,3 +1,5 @@
+package items;
+
 public abstract class Item {
     private int quantity;
 

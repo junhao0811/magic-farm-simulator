@@ -1,3 +1,5 @@
+package creatures;
+
 public class MagicShark extends Creature {
     public MagicShark(String name, int age, int hungerLevel) {
         super(name, age, hungerLevel);

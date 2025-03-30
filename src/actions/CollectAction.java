@@ -1,3 +1,9 @@
+package actions;
+
+import capabilities.Collectible;
+import farm.Farmer;
+import items.Item;
+
 public class CollectAction implements Action {
     private Collectible creature;
 

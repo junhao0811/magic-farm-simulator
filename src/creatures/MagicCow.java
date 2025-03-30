@@ -1,3 +1,8 @@
+package creatures;
+
+import actions.*;
+import capabilities.*;
+import items.*;
 import java.util.List;
 
 public class MagicCow extends Creature implements Collectible {

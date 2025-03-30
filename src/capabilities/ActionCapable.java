@@ -1,3 +1,7 @@
+package capabilities;
+
+import actions.Action;
+
 import java.util.List;
 
 public interface ActionCapable {
