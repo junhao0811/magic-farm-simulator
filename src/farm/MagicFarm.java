@@ -20,12 +20,12 @@ public class MagicFarm {
 
     // Creates six new creatures.Creature objects
     public void createCreatures() {
-        creatures.add(new MagicDuck("Donald", 10, 10, 3));
-        creatures.add(new MagicDuck("Quackers", 200, 10, 3));
-        creatures.add(new MagicCow("Moozy", 39, 10, 10));
-        creatures.add(new MagicCow("Sparkle", 432, 10, 10));
-        creatures.add(new MagicShark("Finn", 5, 10));
-        creatures.add(new MagicShark("Storm", 60, 10));
+        creatures.add(new MagicDuck("Donald", 2, 11, 3));
+        creatures.add(new MagicDuck("Quackers", 3, 11, 3));
+        creatures.add(new MagicCow("Moozy", 4, 11, 10));
+        creatures.add(new MagicCow("Sparkle", 5, 11, 10));
+        creatures.add(new MagicShark("Finn", 6, 11));
+        creatures.add(new MagicShark("Storm", 7, 91));
     }
 
     // Shows each creature's attributes
