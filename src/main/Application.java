@@ -1,3 +1,5 @@
+package main;
+
 import farm.MagicFarm;
 
 public class Application {
