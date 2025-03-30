@@ -1,5 +1,6 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class MagicFarm {
     private List<Creature> creatures;
@@ -42,9 +43,16 @@ public class MagicFarm {
 
         System.out.println(action.execute(farmer));
 
-        for (Creature creature: creatures) {
+        Iterator<Creature> iterator = creatures.iterator();
+        while (iterator.hasNext()) {
+            Creature creature = iterator.next();
             creature.incrementHungerLevel();
             creature.incrementAge();
+
+            // Remove option from the menu if it dies
+            if (creature.checkStatus(Status.DEATH)) {
+                iterator.remove();
+            }
         }
 
         farmer.listInventoryItems();
