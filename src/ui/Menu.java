@@ -1,3 +1,7 @@
+package ui;
+
+import actions.Action;
+
 import java.util.*;
 
 public class Menu {

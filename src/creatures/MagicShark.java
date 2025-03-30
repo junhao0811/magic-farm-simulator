@@ -1,3 +1,5 @@
+package creatures;
+
 public class MagicShark extends Creature {
     public MagicShark(String name, int age, int hungerLevel) {
         super(name, age, hungerLevel);
@@ -10,6 +12,6 @@ public class MagicShark extends Creature {
 
     @Override
     public String toString() {
-        return "MagicShark " + super.toString();
+        return "MagicShark" + super.toString();
     }
 }

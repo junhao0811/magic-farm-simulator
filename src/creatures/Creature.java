@@ -1,10 +1,15 @@
+package creatures;
+
+import actions.*;
+import capabilities.*;
 import java.util.List;
 import java.util.ArrayList;
 
-public abstract class Creature {
+public abstract class Creature implements ActionCapable {
     private int age;
     private String name;
     private int hungerLevel;
+    private Status status;
 
     public Creature(String name, int age, int hungerLevel) {
         this.name = name;
@@ -23,6 +28,19 @@ public abstract class Creature {
 
         // Prevents the hungerLevel to go negative
         hungerLevel = Math.max(0, hungerLevel - amount);
+    }
+
+    public void updateStatus(Status status) {
+        this.status = status;
+    }
+
+    public void recover() {
+        this.status = null;
+    }
+
+    // Indicates whether the creature has the corresponding status or not
+    public boolean checkStatus(Status status) {
+        return this.status == status;
     }
 
     public abstract void feed();
@@ -60,7 +78,27 @@ public abstract class Creature {
         return actions;
     }
 
+    public void incrementHungerLevel() {
+        if (checkStatus(Status.SICK)) {
+            hungerLevel += 2;
+        } else if (checkStatus(null)) {
+            hungerLevel += 1;
+        }
+    }
+
+    public void incrementAge() {
+        // If the hungerLevel is over 100, then the creature will have DEATH status (can't be reverted)
+        if (hungerStatus() > 100) {
+            status = Status.DEATH;
+        // Else keep increasing the age
+        } else {
+            age++;
+        }
+    }
+
+    @Override
     public String toString() {
-        return String.format("Name: %s, Age: %s, Hunger Level: %d", name, formatAge(age), hungerStatus());
+        return String.format("%s Name: %s, Age: %s, Hunger Level: %d", status == Status.SICK ? "[SICK]" : "",
+                name, formatAge(age), hungerStatus());
     }
 }
