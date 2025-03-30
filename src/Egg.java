@@ -8,6 +8,6 @@ public class Egg extends Item {
 
     @Override
     public String toString() {
-        return String.format("Egg: %s %s\n", super.toString(), isBroken ? "BUT is broken!" : "AND is not broken!");
+        return String.format("Egg %s %s", super.toString(), isBroken ? "BUT is broken!" : "AND is not broken!");
     }
 }

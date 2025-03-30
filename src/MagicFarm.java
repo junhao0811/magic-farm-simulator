@@ -40,12 +40,13 @@ public class MagicFarm {
 
         Action action = Menu.showMenu(actions);
 
+        System.out.println(action.execute(farmer));
+
         for (Creature creature: creatures) {
             creature.incrementHungerLevel();
             creature.incrementAge();
         }
 
-        System.out.println(action.execute(farmer));
         farmer.listInventoryItems();
     }
 

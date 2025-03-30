@@ -7,8 +7,12 @@ public class CollectAction implements Action {
 
     @Override
     public String execute(Farmer farmer) {
-        farmer.addItemToInventory(creature.produce());
-        return "Farmer just collected " + creature.toString() + " and have added to the inventory";
+        Item item = creature.produce();
+        if (item == null) {
+            return creature + " is too hungry to produce anything.";
+        }
+        farmer.addItemToInventory(item);
+        return "Farmer just collected " + item + " from " + creature + " and have added to the inventory.";
     }
 
     @Override

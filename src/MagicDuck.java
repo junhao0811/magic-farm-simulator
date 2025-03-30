@@ -36,6 +36,6 @@ public class MagicDuck extends Creature implements Collectible {
 
     @Override
     public String toString() {
-        return "MagicDuck " + super.toString() + String.format(", Egg Quantity: %d", eggQuantity);
+        return "MagicDuck" + super.toString() + String.format(", Egg Quantity: %d", eggQuantity);
     }
 }

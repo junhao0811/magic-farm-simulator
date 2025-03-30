@@ -20,10 +20,4 @@ public class Farmer {
         }
         System.out.println("-----------------------END-----------------------");
     }
-
-    @Override
-    public String toString() {
-        // Implement later
-        return "";
-    }
 }

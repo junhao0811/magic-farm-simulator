@@ -10,6 +10,6 @@ public class MagicShark extends Creature {
 
     @Override
     public String toString() {
-        return "MagicShark " + super.toString();
+        return "MagicShark" + super.toString();
     }
 }

@@ -36,6 +36,6 @@ public class MagicCow extends Creature implements Collectible {
 
     @Override
     public String toString() {
-        return "MagicCow " + super.toString() + String.format(", Milk Quantity: %d", milkAmount);
+        return "MagicCow" + super.toString() + String.format(", Milk Quantity: %d", milkAmount);
     }
 }
