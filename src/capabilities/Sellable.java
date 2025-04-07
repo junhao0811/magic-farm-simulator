@@ -9,8 +9,6 @@ public interface Sellable {
     
     /**
      * Selling feature for things that can be sold
-     *
-     * @param farmer the farmer
      */
-    void sell(Farmer farmer);
+    void sell();
 }
