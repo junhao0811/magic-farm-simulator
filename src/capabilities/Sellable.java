@@ -1,7 +1,5 @@
 package capabilities;
 
-import farm.Farmer;
-
 /**
  * The interface Sellable.
  */
