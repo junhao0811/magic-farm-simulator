@@ -61,7 +61,7 @@ public class MagicFarm {
         }
         
         System.out.println("############################################");
-        
+        System.out.println(farmer.toString());
         Action action = Menu.showMenu(actions);
         
         System.out.println(action.execute(farmer));
@@ -87,6 +87,9 @@ public class MagicFarm {
         createCreatures();
         while (!creatures.isEmpty()) {
             addActionsToMenu();
+            if (farmer.hasMetXpRequirement()) {
+                break;
+            }
         }
         System.out.println("Thank you for visiting FIT2099 Magic Farm!");
     }

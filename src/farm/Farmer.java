@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Farmer {
     
     private List<Item> inventory;
+    private int xp;
     
     /**
      * Instantiates a new Farmer.
@@ -38,5 +39,26 @@ public class Farmer {
             System.out.printf("( %d ) %s\n", i + 1, inventory.get(i).toString());
         }
         System.out.println("-----------------------END-----------------------");
+    }
+    
+    /**
+     * Increases XP for different actions
+     * @param amount an int representing the amount of XP the farmer has gained
+     */
+    public void increaseXp(int amount) {
+        xp += amount;
+    }
+    
+    /**
+     * XP state check method to verify completion conditions
+     * @return true if the farmer reaches/exceeds 100 XP; false otherwise
+     */
+    public boolean hasMetXpRequirement() {
+        return xp >= 100;
+    }
+    
+    @Override
+    public String toString() {
+        return String.format("Farmer [Experience: %d out of 100]", xp);
     }
 }
