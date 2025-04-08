@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * The type Creature.
+ * Creature is a base class that represents the generic magic creatures that stays in the magic farm.
+ *
+ * @author Chong Jun Hao
+ * @version 22.0.1
  */
 public abstract class Creature implements ActionCapable {
     
@@ -16,11 +19,11 @@ public abstract class Creature implements ActionCapable {
     private Status status;
     
     /**
-     * Instantiates a new Creature.
+     * A constructor for the Creature class
      *
-     * @param name        the name
-     * @param age         the age
-     * @param hungerLevel the hunger level
+     * @param name        the name of the creature
+     * @param age         the age of the creature
+     * @param hungerLevel the hunger level of the creature
      */
     public Creature(String name, int age, int hungerLevel) {
         this.name = name;
@@ -29,18 +32,18 @@ public abstract class Creature implements ActionCapable {
     }
     
     /**
-     * Hunger status int.
+     * A getter for the creature's hunger status
      *
-     * @return the int
+     * @return an int representing the creature's hunger status
      */
     public int hungerStatus() {
         return hungerLevel;
     }
     
     /**
-     * Consume food.
+     * A setter to satisfy the creature's craving/hunger
      *
-     * @param amount the amount
+     * @param amount the amount of food consumed by the creature
      */
     public void consumeFood(int amount) {
         // Handles invalid input (does nothing)
@@ -53,42 +56,41 @@ public abstract class Creature implements ActionCapable {
     }
     
     /**
-     * Update status.
+     * A setter of the creature's status
      *
-     * @param status the status
+     * @param status the creature's current status
      */
     public void updateStatus(Status status) {
         this.status = status;
     }
     
     /**
-     * Recover.
+     * A setter of the creature's status which always sets to null (healthy)
      */
     public void recover() {
         this.status = null;
     }
     
     /**
-     * Check status boolean.
+     * Indicates whether the creature has the corresponding status or not
      *
-     * @param status the status
-     * @return the boolean
+     * @param status the status to pass in for checking
+     * @return true if the status matches the current one; false otherwise
      */
-// Indicates whether the creature has the corresponding status or not
     public boolean checkStatus(Status status) {
         return this.status == status;
     }
     
     /**
-     * Feed.
+     * Feeds the creature
      */
     public abstract void feed();
     
     /**
-     * Format age string.
+     * Formats the age string to look more readable.
      *
      * @param totalDays the total days
-     * @return the string
+     * @return the string represents the formatted output
      */
     public String formatAge(int totalDays) {
         final int DAYS_IN_YEAR = 365;
@@ -121,16 +123,17 @@ public abstract class Creature implements ActionCapable {
         return res.toString().trim();
     }
     
+    @Override
     public List<Action> allowableActions() {
-        incrementHungerLevel();
-        incrementAge();
         List<Action> actions = new ArrayList<>();
         actions.add(new FeedAction(this));
+        incrementHungerLevel();
+        incrementAge();
         return actions;
     }
     
     /**
-     * Increment hunger level.
+     * Increments creature's hunger level.
      */
     public void incrementHungerLevel() {
         if (checkStatus(Status.SICK)) {
@@ -141,7 +144,7 @@ public abstract class Creature implements ActionCapable {
     }
     
     /**
-     * Increment age.
+     * Increments creature's age.
      */
     public void incrementAge() {
         // If the hungerLevel is over 100, then the creature will have DEATH status (can't be reverted)

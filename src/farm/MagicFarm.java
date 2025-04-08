@@ -57,6 +57,8 @@ public class MagicFarm {
         
         List<ActionCapable> actionCapables = new ArrayList<>(creatures);
         
+        actionCapables.addAll(farmer.getItemsFromInventory());
+        
         for (ActionCapable actionCapable : actionCapables) {
             actions.addAll(actionCapable.allowableActions());
         }

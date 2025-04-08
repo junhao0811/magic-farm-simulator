@@ -33,6 +33,15 @@ public class Farmer {
     }
     
     /**
+     * A getter for all the items from the farmer's inventory
+     *
+     * @return List<Item> a list of Items collected by the farmer
+     */
+    public List<Item> getItemsFromInventory() {
+        return inventory;
+    }
+    
+    /**
      * Remove item from the farmer's inventory.
      *
      * @param item the item to be removed from the inventory
