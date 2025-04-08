@@ -1,9 +1,11 @@
 package creatures;
 
+import capabilities.Sellable;
+
 /**
  * The type Magic shark.
  */
-public class MagicShark extends Creature {
+public class MagicShark extends Creature implements Sellable {
     
     /**
      * Instantiates a new Magic shark.
@@ -19,6 +21,17 @@ public class MagicShark extends Creature {
     @Override
     public void feed() {
         this.consumeFood(2);
+    }
+    
+    @Override
+    public void sell() {
+        if (Math.random() < 0.5) {
+            System.out.println("Shark becomes angry and terminates the farmer. Game over!");
+            System.exit(0);
+        } else {
+            // farmer.increaseXp(5) TODO: Put in SellAction?
+            System.out.println("5 XP gained from selling the shark!");
+        }
     }
     
     @Override
