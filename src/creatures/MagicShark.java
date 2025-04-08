@@ -52,7 +52,9 @@ public class MagicShark extends Creature implements Sellable {
     @Override
     public List<Action> allowableActions() {
         List<Action> actions = super.allowableActions();
-        actions.add(new SellAction(this));
+        if (!checkStatus(Status.DEATH)) {
+            actions.add(new SellAction(this));
+        }
         return actions;
     }
     

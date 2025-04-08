@@ -26,15 +26,14 @@ public class CollectAction implements Action {
     
     @Override
     public String execute(Farmer farmer) {
-        Item item = creature.produce();
-        // TODO: Maybe put this inside MagicCow and MagicDuck produce() method?
-        if (item == null) {
-            return creature + " is too hungry to produce anything.";
+        if (creature.canProduce()) {
+            Item item = creature.produce();
+            farmer.addItemToInventory(item);
+            farmer.increaseXp(5);
+            return "Farmer just collected " + item + " from " + creature
+                + " and have added to the inventory.";
         }
-        farmer.addItemToInventory(item);
-        farmer.increaseXp(5);
-        return "Farmer just collected " + item + " from " + creature
-            + " and have added to the inventory.";
+        return creature + " is too hungry to produce anything.";
     }
     
     @Override

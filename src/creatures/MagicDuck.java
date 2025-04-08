@@ -43,11 +43,8 @@ public class MagicDuck extends Creature implements Collectible {
     
     @Override
     public Item produce() {
-        if (canProduce()) {
-            return checkStatus(Status.SICK) ? new Egg(eggQuantity, true)
-                : new Egg(eggQuantity, false);
-        }
-        return null;
+        return checkStatus(Status.SICK) ? new Egg(eggQuantity, true)
+            : new Egg(eggQuantity, false);
     }
     
     @Override
@@ -58,7 +55,9 @@ public class MagicDuck extends Creature implements Collectible {
     @Override
     public List<Action> allowableActions() {
         List<Action> actions = super.allowableActions();
-        actions.add(new CollectAction(this));
+        if (!checkStatus(Status.DEATH)) {
+            actions.add(new CollectAction(this));
+        }
         return actions;
     }
     

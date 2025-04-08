@@ -126,9 +126,15 @@ public abstract class Creature implements ActionCapable {
     @Override
     public List<Action> allowableActions() {
         List<Action> actions = new ArrayList<>();
-        actions.add(new FeedAction(this));
-        incrementHungerLevel();
-        incrementAge();
+        
+        // If the hungerLevel is over 100, then the creature will have DEATH status (can't be reverted)
+        if (hungerStatus() >= 100) {
+            status = Status.DEATH;
+        } else {
+            actions.add(new FeedAction(this));
+            incrementHungerLevel();
+            incrementAge();
+        }
         return actions;
     }
     
@@ -147,13 +153,7 @@ public abstract class Creature implements ActionCapable {
      * Increments creature's age.
      */
     public void incrementAge() {
-        // If the hungerLevel is over 100, then the creature will have DEATH status (can't be reverted)
-        if (hungerStatus() > 100) {
-            status = Status.DEATH;
-            // Else keep increasing the age
-        } else {
             age++;
-        }
     }
     
     @Override

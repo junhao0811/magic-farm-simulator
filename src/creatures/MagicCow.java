@@ -44,11 +44,8 @@ public class MagicCow extends Creature implements Collectible, Sellable {
     
     @Override
     public Item produce() {
-        if (canProduce()) {
-            return checkStatus(Status.SICK) ? new Milk(milkAmount, 60)
-                : new Milk(milkAmount, 100);
-        }
-        return null;
+        return checkStatus(Status.SICK) ? new Milk(milkAmount, 60)
+            : new Milk(milkAmount, 100);
     }
     
     @Override
@@ -65,8 +62,10 @@ public class MagicCow extends Creature implements Collectible, Sellable {
     @Override
     public List<Action> allowableActions() {
         List<Action> actions = super.allowableActions();
-        actions.add(new CollectAction(this));
-        actions.add(new SellAction(this));
+        if (!checkStatus(Status.DEATH)) {
+            actions.add(new CollectAction(this));
+            actions.add(new SellAction(this));
+        }
         return actions;
     }
     
