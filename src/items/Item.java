@@ -29,7 +29,7 @@ public abstract class Item implements Sellable, ActionCapable {
     
     @Override
     public void sell(Farmer farmer) {
-        System.out.println(toString() + "has been sold!"); // LSP
+        System.out.println(toString() + " has been sold!"); // LSP
         farmer.removeItemFromInventory(this); // OCP
     }
     
