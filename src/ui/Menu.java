@@ -12,8 +12,8 @@ public class Menu {
     /**
      * Show menu action.
      *
-     * @param actions the actions
-     * @return the action
+     * @param actions the actions to be shown in the menu
+     * @return the action with the key to trigger it
      */
     public static Action showMenu(List<Action> actions) {
         Scanner scanner = new Scanner(System.in);

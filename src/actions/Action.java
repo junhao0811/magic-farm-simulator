@@ -3,22 +3,25 @@ package actions;
 import farm.Farmer;
 
 /**
- * The interface Action.
+ * Action is an interface that represents a generic action that the farmer can do
+ *
+ * @author Chong Jun Hao
+ * @version 22.0.1
  */
 public interface Action {
     
     /**
-     * Execute string.
+     * Executes the action
      *
      * @param farmer the farmer
-     * @return the string
+     * @return a string to be shown in the output after the execution of the action
      */
     String execute(Farmer farmer);
     
     /**
-     * Menu description string.
+     * A menu description to be shown in the output which allows user to choose
      *
-     * @return the string
+     * @return a String which represents description of the action
      */
     String menuDescription();
 }

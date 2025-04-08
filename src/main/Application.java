@@ -3,7 +3,13 @@ package main;
 import farm.MagicFarm;
 
 /**
- * The type Application.
+ * <h1> Magic Farm Simulator </h1>
+ * The Magic Farm Simulator program implements a game that can simulate a magic farm and interact
+ * with creatures
+ *
+ * @author Chong Jun Hao
+ * @version 22.0.1
+ * @since 2025-03-11
  */
 public class Application {
     

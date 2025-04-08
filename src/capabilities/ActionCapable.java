@@ -5,15 +5,18 @@ import actions.Action;
 import java.util.List;
 
 /**
- * The interface Action capable.
+ * ActionCapable is an interface that represents a generic capable actions that can be done on the
+ * creatures or their products.
+ *
+ * @author Chong Jun Hao
+ * @version 22.0.1
  */
 public interface ActionCapable {
     
     /**
-     * Allowable actions list.
+     * Returns a list of actions that certain classes could process
      *
-     * @return the list
+     * @return a list of actions that certain classes could process
      */
-// Returns a list of actions that certain classes could process
     List<Action> allowableActions();
 }

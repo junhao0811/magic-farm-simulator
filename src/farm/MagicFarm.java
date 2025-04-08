@@ -10,7 +10,10 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * The type Magic farm.
+ * MagicFarm class is a class to store all the magic creatures
+ *
+ * @author Chong Jun Hao
+ * @version 22.0.1
  */
 public class MagicFarm {
     
@@ -18,7 +21,7 @@ public class MagicFarm {
     private Farmer farmer;
     
     /**
-     * Instantiates a new Magic farm.
+     * A constructor for the MagicFarm class
      */
     public MagicFarm() {
         creatures = new ArrayList<>();
@@ -26,9 +29,8 @@ public class MagicFarm {
     }
     
     /**
-     * Create creatures.
+     * Creates six new creature objects
      */
-// Creates six new creatures.Creature objects
     public void createCreatures() {
         creatures.add(new MagicDuck("Donald", 2, 11, 3));
         creatures.add(new MagicDuck("Quackers", 3, 11, 3));
@@ -39,9 +41,8 @@ public class MagicFarm {
     }
     
     /**
-     * Display creatures.
+     * Shows each creature's attributes
      */
-// Shows each creature's attributes
     public void displayCreatures() {
         for (int i = 0; i < creatures.size(); i++) {
             System.out.printf("( %d ) %s\n\n", i + 1, creatures.get(i).toString());
@@ -80,7 +81,7 @@ public class MagicFarm {
     }
     
     /**
-     * Print status.
+     * The main game loop.
      */
     public void printStatus() {
         System.out.println("Welcome to FIT2099 Magic Farm");
