@@ -23,6 +23,7 @@ public class FeedAction implements Action {
     @Override
     public String execute(Farmer farmer) {
         creature.feed();
+        // TODO: Put sick logic in creature class, feed method
         // In the case where the creature is already sick, feeding can have a 50% chance of recovering
         if (creature.checkStatus(Status.SICK) && Math.random() < 0.5) {
             creature.recover();

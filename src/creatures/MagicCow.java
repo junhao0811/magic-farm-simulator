@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * The type Magic cow.
  */
-public class MagicCow extends Creature implements Collectible {
+public class MagicCow extends Creature implements Collectible, Sellable {
     
     private int milkAmount;
     
@@ -41,7 +41,14 @@ public class MagicCow extends Creature implements Collectible {
     
     @Override
     public boolean canProduce() {
-        return hungerStatus() < 10;
+        return hungerStatus() < 10 && milkAmount > 0;
+    }
+    
+    @Override
+    public void sell() {
+        System.out.println("This cow will refuse to produce milk in the future.");
+        milkAmount = 0;
+        System.out.println("Attempt to sell is successful!");
     }
     
     @Override
