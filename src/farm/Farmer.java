@@ -6,7 +6,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * The type Farmer.
+ * Farmer class is a class that represents the main character of the game
+ *
+ * @author Chong Jun Hao
+ * @version 22.0.1
  */
 public class Farmer {
     
@@ -14,23 +17,32 @@ public class Farmer {
     private int xp;
     
     /**
-     * Instantiates a new Farmer.
+     * A constructor for the Farmer class
      */
     public Farmer() {
         this.inventory = new ArrayList<>();
     }
     
     /**
-     * Add item to inventory.
+     * Adds item to the farmer's inventory.
      *
-     * @param item the item
+     * @param item the item to be added to the inventory
      */
     public void addItemToInventory(Item item) {
         inventory.add(item);
     }
     
     /**
-     * List inventory items.
+     * Remove item from the farmer's inventory.
+     *
+     * @param item the item to be removed from the inventory
+     */
+    public void removeItemFromInventory(Item item) {
+        inventory.remove(item);
+    }
+    
+    /**
+     * Lists out all farmer's inventory items.
      */
     public void listInventoryItems() {
         System.out.println("Farmer's inventory now hold the following items");
@@ -43,6 +55,7 @@ public class Farmer {
     
     /**
      * Increases XP for different actions
+     *
      * @param amount an int representing the amount of XP the farmer has gained
      */
     public void increaseXp(int amount) {
@@ -51,6 +64,7 @@ public class Farmer {
     
     /**
      * XP state check method to verify completion conditions
+     *
      * @return true if the farmer reaches/exceeds 100 XP; false otherwise
      */
     public boolean hasMetXpRequirement() {
