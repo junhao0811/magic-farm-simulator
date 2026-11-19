@@ -86,7 +86,7 @@ public class MagicFarm {
      * The main game loop.
      */
     public void printStatus() {
-        System.out.println("Welcome to FIT2099 Magic Farm");
+        System.out.println("Welcome to Magic Farm");
         createCreatures();
         while (!creatures.isEmpty()) {
             addActionsToMenu();
@@ -94,6 +94,6 @@ public class MagicFarm {
                 break;
             }
         }
-        System.out.println("Thank you for visiting FIT2099 Magic Farm!");
+        System.out.println("Thank you for visiting Magic Farm!");
     }
 }
